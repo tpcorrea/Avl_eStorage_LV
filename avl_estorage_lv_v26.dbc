@@ -1,0 +1,407 @@
+VERSION "1.2"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: PEC PUMA
+
+
+BO_ 1848 ACT_CYCLE_TIME: 2 PEC
+ SG_ ACT_MSRD_CYCLE : 8|8@1+ (1,0) [0|0] "ms"  PUMA
+ SG_ ACT_DEM_CYCLE : 0|8@1+ (1,0) [0|0] "ms"  PUMA
+
+BO_ 1855 SET_CYCLE_TIME: 2 PUMA
+ SG_ SET_MSRD_CYCLE : 8|8@1+ (1,0) [0|0] "ms"  PEC
+ SG_ SET_DEM_CYCLE : 0|8@1+ (1,0) [0|0] "ms"  PEC
+
+BO_ 664 ACT_STATUS_2: 8 PEC
+ SG_ ACT_STATUS_2_DB67 : 48|16@1+ (1,0) [0|0] ""  PUMA
+ SG_ ACT_STATUS_2_DB45 : 32|16@1+ (1,0) [0|0] ""  PUMA
+ SG_ ACT_STATUS_2_DB23 : 16|16@1+ (1,0) [0|0] ""  PUMA
+ SG_ ACT_STATUS_2_DB01 : 0|16@1+ (1,0) [0|0] ""  PUMA
+
+BO_ 776 ACT_INSULATION_MON: 5 PEC
+ SG_ INS_RESISTANCE : 0|32@1- (1,0) [0|0] "kOhm"  PUMA
+ SG_ INS_MON_STAT : 32|8@1+ (1,0) [0|0] ""  PUMA
+
+BO_ 1816 ACT_HW_LIM_MN: 6 PEC
+ SG_ ACT_HW_LM_U_MN : 0|16@1+ (1,0) [0|65535] "V"  PUMA
+ SG_ ACT_HW_LM_I_MN : 16|16@1- (1,0) [-32768|32767] "A"  PUMA
+ SG_ ACT_HW_LM_PWR_MN : 32|16@1- (1,0) [-32768|32767] "kW"  PUMA
+
+BO_ 1608 AVL_SYS_DEVICE_ID: 4 PEC
+ SG_ HW_DEVICE_ID : 0|32@1+ (1,0) [0|0] ""  PUMA
+
+BO_ 1592 AVL_SYS_PART_ID: 8 PEC
+ SG_ HW_POWER_CLASS : 16|16@1+ (1,0) [0|65535] ""  PUMA
+ SG_ HW_TYPE : 0|16@1+ (1,0) [0|65535] ""  PUMA
+ SG_ HW_REVISION : 48|16@1+ (1,0) [0|65535] ""  PUMA
+ SG_ HW_ID : 32|16@1+ (1,0) [0|65535] ""  PUMA
+
+BO_ 632 ACT_SET_RI_PWR: 8 PEC
+ SG_ ACT_SET_PWR : 32|32@1- (1,0) [-1440|1440] "kW" Vector__XXX
+ SG_ ACT_SET_RI : 0|32@1- (1,0) [-4|4] "Ohm"  PUMA
+
+BO_ 628 SET_RI_PWR: 8 PUMA
+ SG_ SET_PWR : 32|32@1- (1,0) [-1440|1440] "kW" Vector__XXX
+ SG_ SET_RI : 0|32@1- (1,0) [-4|4] "Ohm"  PEC
+
+BO_ 225 ACT_PWR_SWITCH_CTRL: 5 PEC
+ SG_ ACT_SWITCH : 36|4@1+ (1,0) [0|0] "-"  PUMA
+ SG_ ACT_PWR : 0|32@1- (1,0) [0|0] "kW"  PUMA
+ SG_ ACT_CTRL_MODE : 32|4@1+ (1,0) [0|0] ""  PUMA
+
+BO_ 328 ACT_SET_SLOPE: 6 PEC
+ SG_ ACT_PWR_SLOPE : 32|16@1+ (0.1,0) [0|0] "kW/s"  PUMA
+ SG_ ACT_I_SLOPE : 16|16@1+ (0.1,0) [0|0] "A/s"  PUMA
+ SG_ ACT_U_SLOPE : 0|16@1+ (0.1,0) [0|0] "V/s"  PUMA
+
+BO_ 324 SET_SLOPE: 6 PUMA
+ SG_ SET_PWR_SLOPE : 32|16@1+ (0.1,0) [0|0] "kW/s"  PEC
+ SG_ SET_I_SLOPE : 16|16@1+ (0.1,0) [0|0] "A/s"  PEC
+ SG_ SET_U_SLOPE : 0|16@1+ (0.1,0) [0|0] "V/s"  PEC
+
+BO_ 543 SET_VIRTUAL_IN: 1 PUMA
+ SG_ RST_STOP : 0|1@1+ (1,0) [0|0] ""  PEC
+
+BO_ 559 SET_DCH: 3 PUMA
+ SG_ SET_DCH_TIME : 8|16@1+ (0.1,0) [0|0] "s"  PEC
+ SG_ SET_DCH_MODE : 0|8@1+ (1,0) [0|0] "-"  PEC
+
+BO_ 552 ACT_SET_DCH: 3 PEC
+ SG_ ACT_DCH_TIME : 8|16@1+ (0.1,0) [0|0] "s"  PUMA
+ SG_ ACT_DCH_MODE : 0|8@1+ (1,0) [0|0] "-"  PUMA
+
+BO_ 520 ACT_HW_MODE: 3 PEC
+ SG_ ACT_NR_NODES : 16|8@1+ (1,0) [1|6] ""  PUMA
+ SG_ ACT_HW_MODE : 0|8@1+ (1,0) [0|0] "-"  PUMA
+ SG_ ACT_OP_MODE : 8|8@1+ (1,0) [0|0] ""  PUMA
+
+BO_ 368 SET_LIM_MN: 8 PUMA
+ SG_ SET_LIM_U_MN : 0|16@1+ (0.1,0) [0|6553.5] "V"  PEC
+ SG_ SET_LIM_I_MN : 16|24@1- (0.1,0) [-838860.8|838860.7] "A"  PEC
+ SG_ SET_LIM_PWR_MN : 40|24@1- (0.1,0) [-838860.8|838860.7] "kW"  PEC
+
+BO_ 352 SET_LIM_MX: 8 PUMA
+ SG_ SET_LIM_PWR_MX : 40|24@1- (0.1,0) [-838860.8|838860.7] "kW"  PEC
+ SG_ SET_LIM_I_MX : 16|24@1- (0.1,0) [-838860.8|838860.7] "A"  PEC
+ SG_ SET_LIM_U_MX : 0|16@1+ (0.1,0) [0|6553.5] "V"  PEC
+
+BO_ 376 ACT_SET_LIM_MN: 8 PEC
+ SG_ ACT_LIM_U_MN : 0|16@1+ (0.1,0) [0|6553.5] "V"  PUMA
+ SG_ ACT_LIM_PWR_MN : 40|24@1- (0.1,0) [-838860.8|838860.7] "kW"  PUMA
+ SG_ ACT_LIM_I_MN : 16|24@1- (0.1,0) [-838860.8|838860.7] "A"  PUMA
+
+BO_ 360 ACT_SET_LIM_MX: 8 PEC
+ SG_ ACT_LIM_PWR_MX : 40|24@1- (0.1,0) [-838860.8|838860.7] "kW"  PUMA
+ SG_ ACT_LIM_I_MX : 16|24@1- (0.1,0) [-838860.8|838860.7] "A"  PUMA
+ SG_ ACT_LIM_U_MX : 0|16@1+ (0.1,0) [0|6553.5] "V"  PUMA
+
+BO_ 264 ACT_SET_U_I: 8 PEC
+ SG_ ACT_SET_I : 32|32@1- (1,0) [-1200|1200] "A"  PUMA
+ SG_ ACT_SET_U : 0|32@1- (1,0) [0|1200] "V"  PUMA
+
+BO_ 161 ACT_U_I: 8 PEC
+ SG_ ACT_I : 32|32@1- (1,0) [0|0] "A"  PUMA
+ SG_ ACT_U : 0|32@1- (1,0) [-1|2500] "V"  PUMA
+
+BO_ 193 SET_SWITCH_CTRL: 1 PUMA
+ SG_ RST_Q : 6|1@1+ (1,0) [0|0] ""  PEC
+ SG_ RST_E : 7|1@1+ (1,0) [0|0] ""  PEC
+ SG_ SET_CTRL : 3|3@1+ (1,0) [0|0] "-"  PEC
+ SG_ SET_SWITCH : 0|3@1+ (1,0) [0|0] "-"  PEC
+
+BO_ 1824 CLEARANCE: 1 PUMA
+ SG_ CLEARANCE : 0|1@1+ (1,0) [0|0] "-"  PEC
+
+BO_ 1832 WD: 4 PEC
+ SG_ WD : 0|32@1+ (1,0) [0|0] "-"  PUMA
+
+BO_ 177 SET_U_I: 8 PUMA
+ SG_ SET_I : 32|32@1- (1,0) [-1200|1200] "A"  PEC
+ SG_ SET_U : 0|32@1- (1,0) [0|1200] "V"  PEC
+
+BO_ 1032 ACT_FAULT: 2 PEC
+ SG_ ACT_FAULT : 0|8@1+ (1,0) [0|0] "-"  PUMA
+ SG_ ACT_FMSG_ID : 8|8@1+ (1,0) [0|0] "-"  PUMA
+
+BO_ 392 ACT_Q: 8 PEC
+ SG_ ACT_Q_CH : 0|32@1- (1,0) [0|0] "Ah"  PUMA
+ SG_ ACT_Q_DCH : 32|32@1- (1,0) [0|0] "Ah"  PUMA
+
+BO_ 408 ACT_E: 8 PEC
+ SG_ ACT_E_CH : 0|32@1- (1,0) [0|0] "kWh"  PUMA
+ SG_ ACT_E_DCH : 32|32@1- (1,0) [0|0] "kWh"  PUMA
+
+BO_ 1624 AVL_SYS_VER_SW: 8 PEC
+ SG_ ACT_AVL_LNK : 32|16@1+ (1,0) [0|0] ""  PUMA
+ SG_ ACT_AVL_FW : 16|16@1+ (0.001,0) [0|0] ""  PUMA
+ SG_ ACT_AVL_CAN : 0|16@1+ (0.001,0) [0|0] ""  PUMA
+ SG_ ACT_SW_VER : 48|16@1+ (1,0) [0|0] ""  PUMA
+
+BO_ 1800 ACT_HW_LIM_MX: 6 PEC
+ SG_ ACT_HW_LM_PWR_MX : 32|16@1- (1,0) [-32768|32767] "kW"  PUMA
+ SG_ ACT_HW_LM_I_MX : 16|16@1- (1,0) [-32768|32767] "A"  PUMA
+ SG_ ACT_HW_LM_U_MX : 0|16@1+ (1,0) [0|65535] "V"  PUMA
+
+BO_ 276 SET_SUPV_MX: 8 PUMA
+ SG_ SUPV_PWR_MX : 40|24@1- (0.1,0) [-838860.8|838860.7] "kW"  PEC
+ SG_ SUPV_I_MX : 16|24@1- (0.1,0) [-838860.8|838860.7] "A"  PEC
+ SG_ SUPV_U_MX : 0|16@1+ (0.1,0) [0|6553.5] "V"  PEC
+
+BO_ 648 ACT_STATUS: 8 PEC
+ SG_ ACT_STATUS_DB67 : 48|16@1+ (1,0) [0|0] ""  PUMA
+ SG_ ACT_STATUS_DB45 : 32|16@1+ (1,0) [0|0] ""  PUMA
+ SG_ ACT_STATUS_DB23 : 16|16@1+ (1,0) [0|0] ""  PUMA
+ SG_ ACT_STATUS_DB01 : 0|16@1+ (1,0) [0|0] ""  PUMA
+
+BO_ 308 SET_SUPV_MN: 8 PUMA
+ SG_ SUPV_U_MN : 0|16@1+ (0.1,0) [0|6553.5] "V"  PEC
+ SG_ SUPV_I_MN : 16|24@1- (0.1,0) [-838860.8|838860.7] "A"  PEC
+ SG_ SUPV_PWR_MN : 40|24@1- (0.1,0) [-838860.8|838860.7] "kW"  PEC
+
+BO_ 312 ACT_SUPV_MN: 8 PEC
+ SG_ ACT_SUPV_U_MN : 0|16@1+ (0.1,0) [0|6553.5] "V"  PUMA
+ SG_ ACT_SUPV_PWR_MN : 40|24@1- (0.1,0) [-838860.8|838860.7] "kW"  PUMA
+ SG_ ACT_SUPV_I_MN : 16|24@1- (0.1,0) [-838860.8|838860.7] "A"  PUMA
+
+BO_ 280 ACT_SUPV_MX: 8 PEC
+ SG_ ACT_SUPV_PWR_MX : 40|24@1- (0.1,0) [-838860.8|838860.7] "kW"  PUMA
+ SG_ ACT_SUPV_I_MX : 16|24@1- (0.1,0) [-838860.8|838860.7] "A"  PUMA
+ SG_ ACT_SUPV_U_MX : 0|16@1+ (0.1,0) [0|6553.5] "V"  PUMA
+
+
+
+CM_ BU_ PUMA "PUMA and Lynx always communicate with the master only.
+When the system is configured as parallel system the CAN ID's of the sub-systems will be shifted according their ID.";
+CM_ BO_ 1848 "1 Hz; Feedback of actual set cycle time for measured and setpoint values";
+CM_ SG_ 1848 ACT_MSRD_CYCLE "Feedback for  the cycle time for the measured values. Valid nurmbers: 1ms = 1kHz,  2ms = 500Hz, 4ms = 250Hz, 10 and any other number = 100Hz";
+CM_ SG_ 1848 ACT_DEM_CYCLE "Feedback for the cycle time for the demand (setpoint) values. Valid nurmbers: 1ms = 1kHz,  2ms = 500Hz, 4ms = 250Hz, 10 and any other number = 100Hz";
+CM_ BO_ 1855 "1 Hz; Sets the cycle time for measured values (ACT_U_I; ACT_PWR_CTRL) and defines how fast setpoints (SET_U_I_PWR, SET_SWITCH_CTRL) ) will be updated. This message affects update rate of the following CAN messages: SE";
+CM_ SG_ 1855 SET_MSRD_CYCLE "Defines the cycle time for the measured values (ACT_U_I; ACT_PWR_CTRL). Valid nurmbers: 1ms = 1kHz,  2ms = 500Hz, 4ms = 250Hz, 10 and any other number = 100Hz
+";
+CM_ SG_ 1855 SET_DEM_CYCLE "Defines the cycle time for the demand (setpoint) values. Valid nurmbers: 1ms = 1kHz,  2ms = 500Hz, 4ms = 250Hz, 10 and any other number = 100Hz";
+CM_ BO_ 664 "10 Hz";
+CM_ BO_ 776 "Actual insulation resistance in kOhm and actual insulation monitoring state are periodically transmitted to the test automation system.";
+CM_ SG_ 776 INS_RESISTANCE "Isolation resistance (read from isolation monitor)";
+CM_ SG_ 776 INS_MON_STAT "0 ... insulation monitoring off; 1 ... insulation monitoring active (on and no fault); 2 ... insulation monitoring active - active Warning level";
+CM_ BO_ 1816 "1 Hz; Reports e-Storage System limits to TAS used at startup";
+CM_ SG_ 1816 ACT_HW_LM_I_MN "Absolut value of the maximum discharge current";
+CM_ BO_ 1608 "1 Hz";
+CM_ BO_ 1592 "1 Hz";
+CM_ BO_ 632 "10 Hz according to PM, to ensure EBM feature will be still usefull";
+CM_ SG_ 632 ACT_SET_PWR "Actual Set Positive Power";
+CM_ SG_ 632 ACT_SET_RI "Actual Set Resistance";
+CM_ BO_ 628 "10 Hz according to PM, to ensure EBM feature will be still usefull";
+CM_ BO_ 225 "Up to 1 kHz depending on SET_CYCLE_TIME; Contains ACT_CTRL_MODE by intention to have fastest possible feedback";
+CM_ SG_ 225 ACT_SWITCH "Actual Switch State: 0=Off, 1=Standby, 2=On, 5=System Error";
+CM_ SG_ 225 ACT_PWR "Actual Measured Power";
+CM_ SG_ 225 ACT_CTRL_MODE "Actual Control Mode - 0";
+CM_ BO_ 328 "10 Hz";
+CM_ BO_ 324 "10 Hz";
+CM_ BO_ 543 "1 Hz contains the Reset Stop signal";
+CM_ SG_ 543 RST_STOP "Reset Stop: 0->1 to clear an error ";
+CM_ BO_ 559 "1 Hz";
+CM_ SG_ 559 SET_DCH_TIME "Set Discharge Time (valid for Mode 1=Intermediate Circuit and 3=Discharge Unit) Min: 0.0 Max: 6553.5s";
+CM_ SG_ 559 SET_DCH_MODE "Set Discharge Mode (0=No Discharge, 1=Intermediate Circuit, 2=Chopper Off, 3=Discharge Unit)";
+CM_ BO_ 552 "1 Hz";
+CM_ SG_ 552 ACT_DCH_TIME "Actual Set Discharge Time (valid for Mode 1=Intermediate Circuit and 3=Discharge Unit)";
+CM_ SG_ 552 ACT_DCH_MODE "Actual Set Discharge Mode (0=No Discharge, 1=Intermediate Circuit, 2=Chopper Off, 3=Discharge Unit)";
+CM_ BO_ 520 "1 Hz";
+CM_ SG_ 520 ACT_NR_NODES "Actual number of e-Storage systems in parallel operation mode. E.g. Master and three slaves = 4 ; Default Standalone Operation = 0";
+CM_ SG_ 520 ACT_HW_MODE "Actual Hardware Mode - 0 ... LCD Operation (manual operation) , 1 .. Emulator with RT-Node (Analog and CAN active) , 2 .. Tester mode - CAN only, 10 .. Full Analog Mode (Setpoints and Switching via Analog-IF)";
+CM_ SG_ 520 ACT_OP_MODE "Actual operation Mode -  0 ... Master Mode, 1 .. Slave 1, 2 .. Slave 2, 3 .. Slave 3, ...";
+CM_ BO_ 368 "100 Hz";
+CM_ SG_ 368 SET_LIM_U_MN "Set Minimum Voltage Limit";
+CM_ SG_ 368 SET_LIM_I_MN "Set Minimum Positive Current Limit";
+CM_ SG_ 368 SET_LIM_PWR_MN "Set Minimum Positive Power Limit";
+CM_ BO_ 352 "100 Hz";
+CM_ SG_ 352 SET_LIM_PWR_MX "Set Maximum Positive Power Limit";
+CM_ SG_ 352 SET_LIM_I_MX "Set Maximum Positive Current Limit";
+CM_ SG_ 352 SET_LIM_U_MX "Set Maximum Voltage Limit";
+CM_ BO_ 376 "100 Hz";
+CM_ SG_ 376 ACT_LIM_U_MN "Actual Set Minimum Voltage Limit";
+CM_ SG_ 376 ACT_LIM_PWR_MN "Actual Set Minimum Positive Power Limit";
+CM_ SG_ 376 ACT_LIM_I_MN "Actual Set Minimum Positive Current Limit";
+CM_ BO_ 360 "100 Hz";
+CM_ SG_ 360 ACT_LIM_PWR_MX "Actual Set Maximum Positive Power Limit";
+CM_ SG_ 360 ACT_LIM_I_MX "Actual Set Maximum Positive Current Limit";
+CM_ SG_ 360 ACT_LIM_U_MX "Actual Set Maximum Voltage Limit";
+CM_ BO_ 264 "100 Hz";
+CM_ SG_ 264 ACT_SET_I "Actual Set Positive Current";
+CM_ SG_ 264 ACT_SET_U "Actual Set Voltage";
+CM_ BO_ 161 "#Up to 1 kHz depending on SET_CYCLE_TIME";
+CM_ SG_ 161 ACT_I "Actual Measured Current";
+CM_ SG_ 161 ACT_U "Actual Measured Voltage";
+CM_ BO_ 193 "Up to 1 kHz depending on SET_CYCLE_TIME";
+CM_ SG_ 193 SET_CTRL "1: voltage control, 2: current control, 3: power control";
+CM_ SG_ 193 SET_SWITCH "Switching: 0=Off, 1=Standby, 2=On (max. 7)";
+CM_ BO_ 1824 "10 Hz";
+CM_ SG_ 1824 CLEARANCE "Clearance (0=no clearance, 1=clearance) ";
+CM_ BO_ 1832 "#10 Hz Ramp Counter - To check CAN Conncetion to DCPU";
+CM_ SG_ 1832 WD "Watchdog (counting up with 10Hz)";
+CM_ BO_ 177 "#Up to 1 kHz depending on SET_CYCLE_TIME";
+CM_ SG_ 177 SET_U "Set Voltage";
+CM_ BO_ 1032 "10 Hz";
+CM_ SG_ 1032 ACT_FAULT "Actual Fault Message (0=no fault, 1=general fault, 2=latched switch off relay ON, 3=general fault and latched switch off relay ON)";
+CM_ SG_ 1032 ACT_FMSG_ID "Actual Fault Message ID";
+CM_ BO_ 392 "100 Hz";
+CM_ BO_ 408 "100 Hz: Value = M+S";
+CM_ BO_ 1624 "1 Hz";
+CM_ BO_ 1800 "1 Hz; Reports e-Storage System limits to TAS used at startup";
+CM_ SG_ 1800 ACT_HW_LM_I_MX "Absolut value of the maximum charge current";
+CM_ BO_ 276 "10 Hz Hard limits: If violated immediate shutdown (finished within <10 ms)";
+CM_ BO_ 648 "10 Hz Active system state
+consists of 64 bitmapped error codes.";
+CM_ BO_ 308 "10 Hz Current and power supervision limits";
+CM_ BO_ 312 "10 Hz";
+CM_ BO_ 280 "10 Hz Actual Hard limits";
+BA_DEF_ BO_  "GenMsgNrOfRepetitions" INT 0 999999;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","spontaneous";
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 10000;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT -3.4E+038 3.4E+038;
+BA_DEF_DEF_  "GenMsgNrOfRepetitions" 1;
+BA_DEF_DEF_  "GenMsgSendType" "cyclic";
+BA_DEF_DEF_  "GenMsgDelayTime" 1;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_ "GenMsgCycleTime" BO_ 1848 1000;
+BA_ "GenMsgCycleTime" BO_ 1855 1000;
+BA_ "GenMsgCycleTime" BO_ 664 100;
+BA_ "GenMsgCycleTime" BO_ 776 100;
+BA_ "GenMsgCycleTime" BO_ 1816 1000;
+BA_ "GenMsgCycleTime" BO_ 1608 1000;
+BA_ "GenMsgCycleTime" BO_ 1592 1000;
+BA_ "GenMsgCycleTime" BO_ 632 10;
+BA_ "GenMsgCycleTime" BO_ 628 1;
+BA_ "GenMsgCycleTime" BO_ 225 1;
+BA_ "GenMsgCycleTime" BO_ 328 100;
+BA_ "GenMsgCycleTime" BO_ 324 100;
+BA_ "GenMsgCycleTime" BO_ 543 1000;
+BA_ "GenMsgCycleTime" BO_ 559 1000;
+BA_ "GenMsgCycleTime" BO_ 552 1000;
+BA_ "GenMsgCycleTime" BO_ 520 1000;
+BA_ "GenMsgCycleTime" BO_ 368 10;
+BA_ "GenMsgCycleTime" BO_ 352 10;
+BA_ "GenMsgCycleTime" BO_ 376 10;
+BA_ "GenMsgCycleTime" BO_ 360 10;
+BA_ "GenMsgCycleTime" BO_ 264 10;
+BA_ "GenMsgCycleTime" BO_ 161 1;
+BA_ "GenMsgCycleTime" BO_ 193 1;
+BA_ "GenMsgCycleTime" BO_ 1824 100;
+BA_ "GenMsgCycleTime" BO_ 1832 100;
+BA_ "GenMsgCycleTime" BO_ 177 1;
+BA_ "GenMsgCycleTime" BO_ 1032 100;
+BA_ "GenMsgCycleTime" BO_ 392 10;
+BA_ "GenMsgCycleTime" BO_ 408 10;
+BA_ "GenMsgCycleTime" BO_ 1624 1000;
+BA_ "GenMsgCycleTime" BO_ 1800 1000;
+BA_ "GenMsgCycleTime" BO_ 276 100;
+BA_ "GenMsgCycleTime" BO_ 648 100;
+BA_ "GenMsgCycleTime" BO_ 308 100;
+BA_ "GenMsgCycleTime" BO_ 312 100;
+BA_ "GenMsgCycleTime" BO_ 280 100;
+BA_ "GenSigStartValue" SG_ 1848 ACT_MSRD_CYCLE 1;
+BA_ "GenSigStartValue" SG_ 1848 ACT_DEM_CYCLE 1;
+BA_ "GenSigStartValue" SG_ 1855 SET_MSRD_CYCLE 1;
+BA_ "GenSigStartValue" SG_ 1855 SET_DEM_CYCLE 1;
+BA_ "GenSigStartValue" SG_ 1816 ACT_HW_LM_U_MN 0;
+BA_ "GenSigStartValue" SG_ 1816 ACT_HW_LM_I_MN -200;
+BA_ "GenSigStartValue" SG_ 1816 ACT_HW_LM_PWR_MN -20;
+BA_ "GenSigStartValue" SG_ 1608 HW_DEVICE_ID 1000000;
+BA_ "GenSigStartValue" SG_ 1592 HW_POWER_CLASS 20;
+BA_ "GenSigStartValue" SG_ 1592 HW_TYPE 100;
+BA_ "GenSigStartValue" SG_ 1592 HW_REVISION 1;
+BA_ "GenSigStartValue" SG_ 1592 HW_ID 2014;
+BA_ "GenSigStartValue" SG_ 225 ACT_SWITCH 1;
+BA_ "GenSigStartValue" SG_ 225 ACT_CTRL_MODE 0;
+BA_ "GenSigStartValue" SG_ 328 ACT_PWR_SLOPE 0;
+BA_ "GenSigStartValue" SG_ 328 ACT_I_SLOPE 0;
+BA_ "GenSigStartValue" SG_ 328 ACT_U_SLOPE 0;
+BA_ "GenSigStartValue" SG_ 324 SET_PWR_SLOPE 0;
+BA_ "GenSigStartValue" SG_ 324 SET_I_SLOPE 0;
+BA_ "GenSigStartValue" SG_ 324 SET_U_SLOPE 0;
+BA_ "GenSigStartValue" SG_ 559 SET_DCH_TIME 2;
+BA_ "GenSigStartValue" SG_ 559 SET_DCH_MODE 2;
+BA_ "GenSigStartValue" SG_ 552 ACT_DCH_TIME 2;
+BA_ "GenSigStartValue" SG_ 520 ACT_NR_NODES 1;
+BA_ "GenSigStartValue" SG_ 520 ACT_HW_MODE 2;
+BA_ "GenSigStartValue" SG_ 368 SET_LIM_U_MN 0;
+BA_ "GenSigStartValue" SG_ 368 SET_LIM_I_MN -2000;
+BA_ "GenSigStartValue" SG_ 368 SET_LIM_PWR_MN -200;
+BA_ "GenSigStartValue" SG_ 352 SET_LIM_PWR_MX 200;
+BA_ "GenSigStartValue" SG_ 352 SET_LIM_I_MX 2000;
+BA_ "GenSigStartValue" SG_ 352 SET_LIM_U_MX 600;
+BA_ "GenSigStartValue" SG_ 376 ACT_LIM_U_MN 0;
+BA_ "GenSigStartValue" SG_ 376 ACT_LIM_PWR_MN -200;
+BA_ "GenSigStartValue" SG_ 376 ACT_LIM_I_MN -2000;
+BA_ "GenSigStartValue" SG_ 360 ACT_LIM_PWR_MX 0;
+BA_ "GenSigStartValue" SG_ 360 ACT_LIM_I_MX 0;
+BA_ "GenSigStartValue" SG_ 360 ACT_LIM_U_MX 0;
+BA_ "GenSigStartValue" SG_ 264 ACT_SET_U 0;
+BA_ "GenSigStartValue" SG_ 193 SET_CTRL 2;
+BA_ "GenSigStartValue" SG_ 1624 ACT_AVL_LNK 0;
+BA_ "GenSigStartValue" SG_ 1624 ACT_AVL_CAN 0;
+BA_ "GenSigStartValue" SG_ 1624 ACT_SW_VER 1;
+BA_ "GenSigStartValue" SG_ 1800 ACT_HW_LM_PWR_MX 20;
+BA_ "GenSigStartValue" SG_ 1800 ACT_HW_LM_I_MX 0;
+BA_ "GenSigStartValue" SG_ 1800 ACT_HW_LM_U_MX 0;
+BA_ "GenSigStartValue" SG_ 276 SUPV_PWR_MX 200;
+BA_ "GenSigStartValue" SG_ 276 SUPV_I_MX 2000;
+BA_ "GenSigStartValue" SG_ 276 SUPV_U_MX 600;
+BA_ "GenSigStartValue" SG_ 308 SUPV_I_MN -2000;
+BA_ "GenSigStartValue" SG_ 308 SUPV_PWR_MN -200;
+BA_ "GenSigStartValue" SG_ 312 ACT_SUPV_U_MN 0;
+BA_ "GenSigStartValue" SG_ 312 ACT_SUPV_PWR_MN -200;
+BA_ "GenSigStartValue" SG_ 312 ACT_SUPV_I_MN -2000;
+BA_ "GenSigStartValue" SG_ 280 ACT_SUPV_PWR_MX 0;
+BA_ "GenSigStartValue" SG_ 280 ACT_SUPV_I_MX 0;
+BA_ "GenSigStartValue" SG_ 280 ACT_SUPV_U_MX 600;
+SIG_VALTYPE_ 776 INS_RESISTANCE : 1;
+SIG_VALTYPE_ 632 ACT_SET_PWR : 1;
+SIG_VALTYPE_ 632 ACT_SET_RI : 1;
+SIG_VALTYPE_ 628 SET_PWR : 1;
+SIG_VALTYPE_ 628 SET_RI : 1;
+SIG_VALTYPE_ 225 ACT_PWR : 1;
+SIG_VALTYPE_ 264 ACT_SET_I : 1;
+SIG_VALTYPE_ 264 ACT_SET_U : 1;
+SIG_VALTYPE_ 161 ACT_I : 1;
+SIG_VALTYPE_ 161 ACT_U : 1;
+SIG_VALTYPE_ 177 SET_I : 1;
+SIG_VALTYPE_ 177 SET_U : 1;
+SIG_VALTYPE_ 392 ACT_Q_CH : 1;
+SIG_VALTYPE_ 392 ACT_Q_DCH : 1;
+SIG_VALTYPE_ 408 ACT_E_CH : 1;
+SIG_VALTYPE_ 408 ACT_E_DCH : 1;
+
